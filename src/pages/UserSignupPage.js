@@ -21,9 +21,12 @@ class UserSignupPage extends React.Component{
         const errors ={...this.state.errors}
         errors[name]=undefined;
         if(name==="password" || name==="passwordRepeat"){
-            if(name ==="passwordRepeat" && value !== this.state.passwordRepeat){
+            if(name ==="password" && value !== this.state.passwordRepeat){
                 errors.passwordRepeat ="Password mismatch";
-            }else if(name ==="passwordRepeat" && value !== this.state.password){
+            }else if(name==="passwordRepeat" && value !== this.state.password){
+                errors.passwordRepeat ="Password mismatch";
+            }
+            else{
                 errors.passwordRepeat = undefined;
             }
         }
@@ -62,7 +65,7 @@ class UserSignupPage extends React.Component{
                     <form>
 
                         <Input name="username" label="Username" error = {username} onChange={this.onChange} type="text"/>
-                        <Input name="displayname" label="Displayname" error = {displayName} onChange={this.onChange} type="text"/>
+                        <Input name="displayName" label="Displayname" error = {displayName} onChange={this.onChange} type="text"/>
                         <Input name="password" label="Password" error = {password} onChange={this.onChange} type="password"/>
                         <Input name="passwordRepeat" label="Password Repeat" error ={passwordRepeat} onChange={this.onChange} type="password"/>
                         <button disabled={pendingApiCall} onClick={this.onClickSignup} type="button" >
