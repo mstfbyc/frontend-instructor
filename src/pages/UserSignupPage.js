@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/SignupStyle.css'
 import '../bootstrap-override.scss'
 import avatar from '../images/avatar.png'
-import {signup, chamgeLanguage} from '../api/apiCalls'
+import {signup} from '../api/apiCalls'
 import Input from "../components/Input";
 import {withTranslation} from "react-i18next";
 
@@ -55,16 +55,11 @@ class UserSignupPage extends React.Component{
         }
         this.setState({pendingApiCall:false});
     }
-    onChangeLanguage = language =>{
-        const {i18n} = this.props;
-        i18n.changeLanguage(language);
-        chamgeLanguage(language);
-    }
+
     render(){
         const {t} = this.props;
         const {pendingApiCall,errors} = this.state
         const {username,displayName,password, passwordRepeat} = errors;
-        console.log(username)
         return(
                 <div className="contact-form">
                     <img alt="" className="avatar" src={avatar}/>
@@ -78,12 +73,6 @@ class UserSignupPage extends React.Component{
                         <button disabled={pendingApiCall} onClick={this.onClickSignup} type="button" >
                             {pendingApiCall && <span className="spinner-border spinner-border-sm"></span>}{t('Sign Up')} </button>
                     </form>
-                    <br/>
-                    <br/>
-                    <div>
-                        <img src="https://www.countryflags.io/tr/shiny/32.png" alt="Turkiye Flag" onClick={()=> this.onChangeLanguage('tr')}/>
-                        <img src="https://www.countryflags.io/gb/shiny/32.png" alt="English Flag" onClick={()=> this.onChangeLanguage('en')}/>
-                    </div>
                 </div>
         );
     }
