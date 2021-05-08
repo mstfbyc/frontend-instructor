@@ -86,3 +86,12 @@ body:before {
 input[type=checkbox] {
     width: 20%;
 }
+.LanguageSelector{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+.LanguageSelector img{
+    padding: 5px;
+
+}
