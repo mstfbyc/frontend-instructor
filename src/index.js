@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import UserSignupPage from './pages/UserSignupPage';
-import LoginPage from "./pages/LoginPage";
-import LanguageSelector from "./components/LanguageSelector";
 import reportWebVitals from './reportWebVitals';
 import './i18n';
+import App from "./container/App";
+
 
 ReactDOM.render(
   <React.StrictMode>
-          <LoginPage />
-          <LanguageSelector/>
-
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

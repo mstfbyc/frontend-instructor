@@ -5,8 +5,8 @@ import avatar from '../images/avatar.png'
 import Input from "../components/Input";
 import {withTranslation} from "react-i18next";
 import {login} from "../api/apiCalls";
-import axios from "axios";
 import ButtonWithProgress from "../components/ButtonWithProgress";
+import {withApiProgress} from "../shared/ApiProgress";
 
 class LoginPage extends React.Component{
     state ={
@@ -16,19 +16,6 @@ class LoginPage extends React.Component{
         error:null
     };
 
-    componentDidMount() {
-        axios.interceptors.request.use((request)=>{
-            this.setState({pendingApiCall:true});
-            return request;
-        });
-        axios.interceptors.response.use((response)=>{
-            this.setState({pendingApiCall:false});
-            return response;
-        }, (error)=>{
-            this.setState({pendingApiCall:false});
-            throw error;
-        })
-    }
 
     onChange = event =>{
         const {t} = this.props;
@@ -64,8 +51,8 @@ class LoginPage extends React.Component{
     }
 
     render() {
-        const {t} = this.props;
-        const {error, username,password,pendingApiCall} = this.state;
+        const {t,pendingApiCall} = this.props;
+        const {error, username,password} = this.state;
         const buttonEnabled = username && password;
         return(
             <div className="contact-form">
@@ -81,4 +68,5 @@ class LoginPage extends React.Component{
     }
 }
 const UserLoginPageWithTranslation = withTranslation()(LoginPage);
-export default UserLoginPageWithTranslation;
+const UserLoginPageWithApiProgress = withApiProgress(UserLoginPageWithTranslation,'/api/1.0/auth');
+export default UserLoginPageWithApiProgress;
