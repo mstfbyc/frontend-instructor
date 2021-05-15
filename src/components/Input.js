@@ -6,7 +6,6 @@ const Input = (props)=>{
     console.log(className);
     return(
         <div className={className}>
-
             <p>{label}</p>
             <input className={className} placeholder={placeholder} type={type} name={name} onChange={onChange}/>
             <div className="invalid-feedback">{error} </div>
