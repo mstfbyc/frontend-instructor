@@ -8,7 +8,7 @@ body:before {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-image: url(https://onlineplus.com.au/wp-content/uploads/2016/11/slider-background-1.jpg);
+    background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/68/20/5nw04Z.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,7 +19,7 @@ body:before {
     filter: blur(10px);
 }
 .contact-form {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -86,12 +86,4 @@ body:before {
 input[type=checkbox] {
     width: 20%;
 }
-.LanguageSelector{
-    position: absolute;
-    top: 2%;
-    right: 2%;
-}
-.LanguageSelector img{
-    padding: 5px;
 
-}
