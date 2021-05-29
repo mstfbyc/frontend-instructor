@@ -1,1 +1,41 @@
 @import "~bootstrap/scss/bootstrap";
+
+.container-urban{
+  position: fixed;
+  padding-bottom: 10px;
+}
+
+.LanguageSelector{
+  position: fixed;
+  top: 2%;
+  right: 2%;
+}
+.LanguageSelector img{
+  padding: 5px;
+
+}
+.logo-img{
+  width: 20%; height: 20%; object-fit: cover;
+}
+.nav-bar-div{
+  width: 100%;
+  left: 0%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0) !important;
+
+}
+.nav-urban{
+  background: rgba(0, 0, 0, 0.5) !important;
+  padding-right: 20%;
+
+}
+.nav-urban a,li{
+  color: white !important;
+}
+.nav-urban a:hover{
+  color: red !important;
+}
+.urban-div{
+  position: absolute;
+  padding-top: 12%;
+}
